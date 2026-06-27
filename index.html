@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator 🖩</title>
+
+    <style>
+        body {
+            background-color: white;
+        }
+        
+        .box {
+            width: 350px;
+            margin: auto;
+            text-align: center;
+            background-color: #c7e3ef;
+            border: 5px double red;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 35px;
+        }
+        
+        label {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 145px;
+            height: 15px;
+            margin: 10px;
+        }
+        
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        button {
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>CALCULATOR</h1>
+
+        <label>NUMBER -1</label><br>
+        <input type="number" id="num1"><br><br>
+
+        <label>NUMBER -2</label><br>
+        <input type="number" id="num2"><br><br>
+
+        <label>OPERATOR</label><br>
+        <input type="text" id="op" placeholder="+ - * /"><br><br>
+
+        <p id="result">TOTAL</p>
+
+        <button onclick="calculate()">SUBMIT</button>
+    </div>
+
+    <script>
+        function calculate() {
+
+            let n1 = Number(document.getElementById("num1").value);
+            let n2 = Number(document.getElementById("num2").value);
+            op = document.getElementById("op").value;
+
+            let total;
+
+            if (op == "+") {
+                total = n1 + n2;
+            } else if (op == "-") {
+                total = n1 - n2;
+            } else if (op == "*") {
+                total = n1 * n2;
+            } else if (op == "/") {
+                total = n1 / n2;
+            } else {
+                total = "Invalid";
+            }
+
+            document.getElementById("result").innerHTML = total;
+        }
+    </script>
+</body>
